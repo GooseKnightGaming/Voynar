@@ -3,5 +3,20 @@
     "id": "1r",
     "file": "folios/f1r.txt",
     "glyphs": 100
+  },
+  {
+    "id": "1v",
+    "file": "folios/f1v.txt",
+    "glyphs": 1200
+  },
+  {
+    "id": "2r",
+    "file": "folios/f2r.txt",
+    "glyphs": 400
+  },
+  {
+    "id": "2v",
+    "file": "folios/f2v.txt",
+    "glyphs": 200
   }
 ]
