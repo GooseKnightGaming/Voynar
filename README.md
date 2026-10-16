@@ -22,6 +22,6 @@ Each glyph is written with one letter or digit (`A`–`Z`, `a`–`z`, `0`–`9`)
 
 Open an issue with the folio number and the first five words of your reading. Please don't post a full solution publicly.
 
-## Fonts
+## Font
 
-`voynar-manuscript.woff` is traced from the author's handwriting. `voynar-pixel.woff` was built with [FontStruct](https://fontstruct.com) and is supplied under the FontStruct licence in `assets/fonts/voynar-pixel-LICENSE.txt`, which does not allow redistribution or reuse.
+`assets/fonts/voynar-manuscript.woff` is traced from the author's handwriting and is used to display the glyphs.

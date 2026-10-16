@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@500;700&family=Alegreya+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 @font-face{font-family:"Voynar Manuscript";src:url(assets/fonts/voynar-manuscript.woff) format("woff");font-display:block}
-@font-face{font-family:"Voynar Pixel";src:url(assets/fonts/voynar-pixel.woff) format("woff");font-display:block}
 
 /* Layout: a reading room. A short notice, then the folios one after another, then the glyph chart scholars transcribe with. */
 :root{
@@ -52,14 +51,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--verdigris);outline-
 .line{display:grid;grid-template-columns:2.6em minmax(0,1fr);align-items:baseline;gap:8px}
 .ln{font:500 .72rem var(--mono);color:var(--ink-soft);text-align:right}
 .txt{font:30px/1.75 "Voynar Manuscript",var(--mono);white-space:pre;color:var(--ink)}
-.txt .z{font-family:"Voynar Pixel";font-size:.8em}
 .folio.tr .txt{font:500 .95rem/1.9 var(--mono);color:var(--woad)}
 .empty{border:1px dashed var(--rule);border-radius:3px;padding:28px;text-align:center;color:var(--ink-soft)}
 
 .chart{display:grid;grid-template-columns:repeat(auto-fill,minmax(70px,1fr));gap:6px}
 .chart div{background:var(--folio);border:1px solid var(--rule);border-radius:3px;display:grid;justify-items:center;padding:6px 0 4px}
 .chart .g{font:34px/1.2 "Voynar Manuscript"}
-.chart .g.z{font-family:"Voynar Pixel";font-size:26px;line-height:1.55}
 .chart .k{font:500 .78rem var(--mono);color:var(--woad)}
 .rules{display:grid;gap:10px;max-width:66ch}
 .rules li{margin-bottom:6px}
@@ -98,9 +95,8 @@ footer{color:var(--ink-soft);font-size:.85rem;border-top:1px solid var(--rule);p
 </div>
 <script>
 const KEYS=[..."ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"];
-const NO_HAND=new Set(["0"]); // glyphs with no handwritten form yet: shown in the pixel face
-const glyphHTML=s=>[...s].map(c=>NO_HAND.has(c)?`<span class="z">${c}</span>`:c).join("");
-document.getElementById("chart").innerHTML=KEYS.map(k=>`<div><span class="g${NO_HAND.has(k)?" z":""}">${k}</span><span class="k">${k}</span></div>`).join("");
+const glyphHTML=s=>s;
+document.getElementById("chart").innerHTML=KEYS.map(k=>`<div><span class="g">${k}</span><span class="k">${k}</span></div>`).join("");
 
 async function load(){
   let list=[];
